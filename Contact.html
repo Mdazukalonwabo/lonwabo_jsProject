@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS_Project</title>
+
+<!--external jQuery, javascript and css scripts linked here and googled downloaded fonts linked here-->
+    <script src="Code4ct_Javascript\jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Code4ct_Javascript\Code4ct_JS_Project.js"></script>
+    <link type="text/css" rel="stylesheet" href="Code4ct_Css\Code4ct_Js_ProjectStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica|Arial|Lucida|sans-serif|Lato" rel="stylesheet">
+<!--ends-->
+    <style>
+/*the contain that holds the content of the page made as a grid with 5 areas*/
+      .container{
+        display: grid;
+        grid-template-areas: "Header"
+                             "Article"
+                             "contactForm"
+                             "code4ctMap"
+                             "footer";
+      }
+/*ends*/
+
+/*div placed in its area of the gir with a height and has its own grid that has 2 cols and a margin all around (top,Right,bottom,left)*/
+      .code4ct_contactInfo{
+        grid-area: contactForm;
+        height: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        margin: 0;
+      }
+/*ends*/
+/*map a footer placed within the grid*/
+      .code4ct_Map{
+        grid-area: code4ctMap;
+      }
+
+      footer{
+        grid-area: footer;
+      }
+/*ends*/
+/*form input given a width and height, margin to the right and bottom, and a border-radius to its square shape*/
+      form input{
+        width: 210px;
+        height: 50px;
+        border-radius: 5%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+/*ends*/
+
+/*the textarea given a width within the div that it is paced in aswell as a height*/
+      textarea{
+        width: 90%;
+        border-radius: 2%;
+        height: 100%;
+      }
+/*ends*/
+
+    #message{
+      display: none;
+    }
+
+/*id given a width and a height*/
+      #enquire_icons{
+        width: 20px;
+        height: 20px;
+      }
+/*ends*/
+      @media only screen and (min-device-width: 0px) and (max-device-width: 425px){
+        header{
+          position: relative;
+        }
+        .logo{
+
+        }
+        .logo #logoImage{
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .navbar{
+          position: relative;
+        }
+
+        .navbar li{
+          width: 100%;
+        }
+
+        .navbar li a{
+          font-size: 20px;
+        }
+
+        ..code4ct_contactInfo{
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+
+        .code4ct_Map{
+          display: none;
+        }
+
+
+}
+
+
+    </style>
+  </head>
+  <body>
+<!-- container that holds that content within the website with four main sections-->
+    <div class="container">
+      <header>
+<!-- logo placed within a div as well as the navbar to all the other pages of the website placed within its own div within the header         -->
+        <div class="logo">
+          <img src="Code4ct_Images\code4ct-logo-1.jpg" alt="Code4ct_Logo" id="logoImage">
+        </div>
+        <div class="navbar">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </div>
+<!--ends-->
+      </header>
+<!-- caption given a h3 heading-->
+      <div class="title_Holder">
+        <h2>CONTACT US</h2>
+      </div>
+<!--ends-->
+      <div class="code4ct_contactInfo">
+<!-- the div has a form with three inputs for the user to add and a area in which they can type their message into, and should they need more details information is placed within a table for more structure and reading-->
+        <div class="feedback_form">
+          <h3>Send Us a Message</h3>
+          <hr>
+          <br>
+          <form class="" name="feedback_Form">
+            <input type="text" name="name" placeholder="Your Name" id="name">
+            <input type="email" name="email" placeholder="Your Email">
+            <input type="number" name="cellphoneNumber" placeholder="Phone Number">
+            <p id="message"> check if all fields are correct</p>
+            <textarea name="Message" rows="8" cols="75" placeholder="Message"></textarea>
+            <button type="submit" name="button" class="buttons" id="BUTTON">Send Email</button>
+          </form>
+        </div>
+        <div class="enquire">
+          <h3>Contact info</h3>
+          <hr>
+          <br>
+          <p>Whether you’re calling, visiting or connecting with us online, we’re ready to help you.</p>
+          <table>
+            <tr>
+              <td><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"></td>
+              <td>021 685 0991</td>
+            </tr>
+            <tr>
+              <td><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"></td>
+              <td>info@code4ct.com</td>
+            </tr>
+            <tr>
+              <td><img src="Code4ct_Images\Icon\clock.png" alt="phone_icon" id="enquire_icons"></td>
+              <td>Mon-Fri 09</td>
+            </tr>
+            <tr>
+              <td><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"></td>
+              <td>Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</td>
+            </tr>
+          </table>
+        </div>
+<!--ends-->
+      </div>
+
+      <div class="code4ct_Map">
+<!-- embed map with the location of code4ct for easy loction for the user-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.638062446006!2d18.44652591483123!3d-33.924713680640664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d9854044ed9%3A0x6a0ebf49da5aabab!2sCodeSpace!5e0!3m2!1sen!2sza!4v1510303579708" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen target:></iframe>
+<!--ends-->
+      </div>
+<!-- backtotop placed as an image than when clicked takes user back to the top of the page -->
+      <div class="backToTop">
+        <a href=''><img src="Code4ct_Images\Icon\back_to_top.png" alt="back_Top_Icon" id="back_to_top"></a>
+      </div>
+<!-- ends-->
+<!-- the location in switch one can get hold of code4ct and the other sponsers involved with them as well as their social media links -->
+      <footer>
+        <div class="code4ct_Contact_Information">
+          <div class="Code4ct_legality">
+              <h4>Legal</h4>
+              <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+          </div>
+          <div class="code4ct_extra_information">
+              <h5>Company</h5>
+              <ul>
+                <li><a href="Code4ct_JS_Project_About.html">About</a></li>
+                <li><a href="Code4ct_JS_Project_Contact.html">Contact</a></li>
+                <li><a href="http://code4ct.com/blog/" target="_blank">Blog</a></li>
+                <li><a href="http://code4ct.com/impact/" target="_blank">Testimonials</a></li>
+                <li><a href="http://code4ct.com/support-us/" target="_blank">Affilate program</a></li>
+              </ul>
+          </div>
+          <div class="code4ct_feedback">
+              <h5>Help & Support</h5>
+              <ul>
+                <li>Help centre</li>
+                <li>Free simple Template</li>
+                <li>Refund policy</li>
+                <li>Report span</li>
+              </ul>
+          </div>
+          <div class="code4ct_contact_details">
+            <ol>
+              <li><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"> 021 685 0991</li>
+              <li><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"> info@code4ct.com</li>
+              <li><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"> Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</li>
+            </ol>
+          </div>
+
+        </div>
+        <div class="footer_Border">
+          <p>COPYRIGHT &copy 2017 <strong>PRIVACY POLICY</STRONG></p>
+          <p id="social_media" style="float: left;">Follow us:
+            <ul id="social_media_icons">
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png" ></a></li>
+              <li><a href="https://twitter.com/@code4ct" target="_blank"><img src="Code4ct_Images\Icon\Twitter-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Pinterest-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></a></li>
+              <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\linkedin_Icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\skype_icon.png"></a></li>
+            </ul>
+          </p>
+        </div>
+      </footer>
+<!-- ends -->
+    </div>
+<!--ends-->
+  <script>
+  let Name = $("#name").val();
+  let message =$("#message");
+  var confirmPassword = $("#ConfirmPass").val();
+
+$(function () {
+$("#BUTTON").click(function () {
+   if (Name === " ") {
+     message.style.display = block;
+       return false;
+   }
+   return true;
+});
+});
+  </script>
+  </body>
+</html>

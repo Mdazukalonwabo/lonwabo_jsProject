@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS_Project</title>
+
+<!--external css and javascript scripts linked here-->
+    <script src="Code4ct_Javascript\jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Code4ct_Javascript\Code4ct_JS_Project.js"></script>
+    <link type="text/css" rel="stylesheet" href="Code4ct_Css\Code4ct_Js_ProjectStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica|Arial|Lucida|sans-serif|Lato" rel="stylesheet">
+<!--ends-->
+  <style media="screen">
+/*div given a width and a font-size, the main heading aligned and the footer floated and given a width*/
+    .container{
+      width: 100%;
+      font-size: 20px;
+    }
+
+    h1{
+      text-align: center;
+    }
+
+    footer{
+      float: left;
+      width: 100%;
+    }
+/*ends*/
+
+/*the div positioned and has a margin top/right border on the top and the botttom and has a background-color, floated and has a raduis to smooth out the edges, given a min height and a auto max height, width given, h2 aligned and the dives within given a width*/
+    .CourseContainer{
+      position: relative;
+      margin-top: 100px;
+      margin-right: 50px;
+      border-top: 5px solid grey;
+      background-color: rgb(142, 178, 237);
+      border-bottom: 5px solid grey;
+      float: left;
+      border-radius: 10%;
+      min-height: 1000px;
+      height: auto;
+      width: 75%;
+    }
+
+    .CourseContainer h2{
+      text-align: center;
+    }
+
+    .CourseContainer > div {
+      width: 100%;
+    }
+/*ends*/
+
+/*the div with the cart of the page floated, has a border, background-color and an automated hieght, width included and positioned such that it doesnt move and has a margin to the top the heading within placed in the center and has a margin to the right and font-size, the img has a width and height, floated and has a radius. background-color included and a margin to the left*/
+    .ApplicationCart{
+      float: left;
+      border: 2px solid black;
+      background-color: rgb(167, 175, 165);
+      height: auto;
+      width: 300px;
+      position: fixed;
+      margin-top: 100px;
+      right: 25px;
+      z-index: 99;
+    }
+
+    .ApplicationCart h2{
+      text-align: center;
+      margin-right: 20px;
+      font-size: 25px;
+    }
+
+    .ApplicationCart img{
+      width: 50px;
+      height: 50px;
+      float: left;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0, .5);
+      margin-left: 10px;
+    }
+/*ends*/
+
+/*its div as well as the the div= cartTotal made a grid and given two cols with a margin top/bottom and right/left the cursor changes its over the content and the img given a width and height*/
+    .addedToCart div, .cartTotal{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      margin: 10px 20px;
+      cursor: pointer;
+    }
+    img{
+      width: 80%;
+      height: 200px;
+    }
+
+    .addedToCart{
+
+    }
+
+    .Items_holder{
+      height: 150px;
+      overflow: scroll;
+    }
+/*ends*/
+
+/*automated margin and padding removed, the div floated and has width and height and positioned, min/max height  given, margin top/bottom and right/left, border as well as a background-color, text placed in the center with a font-family, cursor and transitioning*/
+    .Introduction_courses , .Beginner_courses{
+      margin: 0;
+      padding: 0;
+    }
+
+    .Introduction_courses > .courseHolder, .Beginner_courses > .courseHolder{
+      float: left;
+      width: 350px;
+      height: auto;
+      position: relative;
+      min-height: 270px;
+      margin: 10px 10px;
+      border: 2px solid black;
+      background-color: white;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      cursor: pointer;
+      transition: .3s;
+    }
+/*ends*/
+/*the div as a filter and brigthness when hover apon*/
+    .courseHolder > div:hover :not(.hiddenContent){
+      filter : blur(5px) brightness(70%);
+    }
+/*ends*/
+/*floated and has a margin to the left and no padding*/
+    .Introduction_courses div h4, .Beginner_courses div h4 {
+      float: left;
+      margin: 0;
+      margin-left: 20px;
+      padding: 0;
+    }
+/*ends*/
+/*the div positioned, width given as well a opacity and transition, placed in the center and font-size including weight, when you hover over it has a solid opacity and displayed as well as a position thus transition, the img has a radius*/
+    .hiddenContent{
+      position: absolute;
+      width: 50%;
+      top: 20%;
+      right: 25%;
+      z-index: 9999;
+      opacity: 0.1;
+      transition: .3s;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hiddenContent:hover{
+      opacity: 1;
+      display: block;
+      position: absolute;
+      transition: .3s;
+    }
+
+    .hiddenContent img{
+      border-radius: 50%;
+    }
+/*ends*/
+/*class given a height*/
+    .webpageContent{
+      height: 50px;
+    }
+/*ends*/
+
+/*the buttton tag given a width and height as well as automated margin*/
+    button{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-left: 50px;
+      margin-top: 40px;
+      float: right;
+    }
+/*ends*/
+  </style>
+
+  </head>
+  <body>
+<!-- container that holds that content within the website with four main sections-->
+    <div class="container">
+      <header>
+<!-- logo placed within a div as well as the navbar to all the other pages of the website placed within its own div within the header         -->
+        <div class="logo">
+          <img src="Code4ct_Images\code4ct-logo-1.jpg" alt="Code4ct_Logo" id="logoImage">
+        </div>
+        <div class="navbar">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </div>
+<!--ends-->
+      </header>
+<!-- container that holds the courses -->
+      <div class="CourseContainer">
+          <h2>Courses offered by CODE4CT</h2>
+          <div class="Introduction_courses" >
+            <h1>Introductory Coding Courses</h1>
+            <div class="courseHolder">
+              <div class="IntroCourse0">
+                <img src="Code4ct_Images\CourseImages\monitor.png" alt="" class = "courseImage">
+              </div>
+            </div>
+
+            <div class="courseHolder">
+              <div class="IntroCourse1">
+                <img src="Code4ct_Images\CourseImages\music.png" alt="" class = "courseImage">
+              </div>
+            </div>
+
+            <div class="courseHolder">
+              <div class="IntroCourse2">
+                <img src="Code4ct_Images\CourseImages\animation.png" alt="" class = "courseImage">
+              </div>
+            </div>
+          </div>
+
+          <div class="Beginner_courses">
+            <h1>Beginner Coding Courses</h1>
+            <div class="courseHolder">
+              <div class="bgCourse0">
+                <img src="Code4ct_Images\CourseImages\JavaScript.png" alt="" class = "courseImage">
+              </div>
+            </div>
+
+            <div class="courseHolder">
+              <div class="bgCourse1">
+                <img src="Code4ct_Images\CourseImages\frontend-developer.png" alt="" class = "courseImage">
+              </div>
+            </div>
+
+            <div class="courseHolder">
+              <div class="bgCourse2">
+                <img src="Code4ct_Images\CourseImages\python.png" alt="" width="50px" class = "courseImage">
+              </div>
+            </div>
+
+          </div>
+          <div class="highlighted">
+
+          </div>
+<!-- ends -->
+      </div>
+<!-- the cart of the webpage -->
+      <div class="ApplicationCart">
+          <img src="Code4ct_Images\CourseImages\cart.png" alt="cart_logo">
+          <h2>Cart</h2>
+          <div class="Items_holder">
+            <div class="addedToCart">
+            </div>
+          </div>
+          <div class="cartTotal" id="totalCourse_cost">
+            <h5>Total Cost</h5>
+            <div id="totalCourse_cost">45454</div>
+          </div>
+      </div>
+<!-- ends -->
+<!-- the location in switch one can get hold of code4ct and the other sponsers involved with them as well as their social media links -->
+      <footer>
+        <div class="code4ct_Contact_Information">
+          <div class="Code4ct_legality">
+              <h4>Legal</h4>
+              <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+          </div>
+          <div class="code4ct_extra_information">
+              <h5>Company</h5>
+              <ul>
+                <li><a href="Code4ct_JS_Project_About.html">About</a></li>
+                <li><a href="Code4ct_JS_Project_Contact.html">Contact</a></li>
+                <li><a href="http://code4ct.com/blog/" target="_blank">Blog</a></li>
+                <li><a href="http://code4ct.com/impact/" target="_blank">Testimonials</a></li>
+                <li><a href="http://code4ct.com/support-us/" target="_blank">Affilate program</a></li>
+              </ul>
+          </div>
+          <div class="code4ct_feedback">
+              <h5>Help & Support</h5>
+              <ul>
+                <li>Help centre</li>
+                <li>Free simple Template</li>
+                <li>Refund policy</li>
+                <li>Report span</li>
+              </ul>
+          </div>
+          <div class="code4ct_contact_details">
+            <ol>
+              <li><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"> 021 685 0991</li>
+              <li><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"> info@code4ct.com</li>
+              <li><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"> Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</li>
+            </ol>
+          </div>
+
+        </div>
+        <div class="footer_Border">
+          <p>COPYRIGHT &copy 2017 <strong>PRIVACY POLICY</STRONG></p>
+          <p id="social_media" style="float: left;">Follow us:
+            <ul id="social_media_icons">
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png" ></a></li>
+              <li><a href="https://twitter.com/@code4ct" target="_blank"><img src="Code4ct_Images\Icon\Twitter-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Pinterest-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></a></li>
+              <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\linkedin_Icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\skype_icon.png"></a></li>
+            </ul>
+          </p>
+        </div>
+      </footer>
+  <!--ends-->
+    </div>
+    <script>
+      let introductionDivs = [{
+        webPage : $(".bgCourse0"),
+        Music : $(".bgCourse1"),
+        animation : $(".bgCourse2")
+      }];
+
+      let BeginnerDivs = [{
+        webPage : $(".IntroCourse0"),
+        Music : $(".IntroCourse1"),
+        animation : $(".IntroCourse1"),
+      }];
+
+      let introductoryCodingCourses = [{
+            Name : "Intro to Coding: Web Pages",
+            Description : "Code a simple one-page website using HTML and JQuery.",
+            Duration : "3 hours",
+            Price : 250
+          },
+            {
+            Name : "Intro to Coding: Music",
+            Description : "Code a song using SonicPi software on a Raspberry Pi computer.",
+            Duration : "3 hours",
+            Price : 250
+          },
+            {
+            Name : "Create a 2D animation using coding",
+            Description : "Create a 2D animation using coding language JavaScript.",
+            Duration : "3 hours",
+            Price : 250
+          }
+      ];
+
+      let BeginnerCodingCourses =[{
+            Name : "Beginner JavaScript",
+            Description : "Develop a basic proficiency in programming structures and methods in JavaScript so that you are able to create an interactive web application.",
+            Duration : "6 days",
+            Price :  1800
+          },
+            {
+            Name : "Beginner Front End Web Development",
+            Description : "Develop a good proficiency in CSS and an understanding of web design principles so that you are able to create visually pleasing web pages.",
+            Duration : " 6 days",
+            Price : 1800
+          },
+            {
+            Name : "Beginner Python",
+            Description : "Develop a basic proficiency in programming principles and methods in Python.",
+            Duration : " 6 days",
+            Price : 1800
+          }
+      ];
+
+      $(function Introcreation() {
+          for (var i = 0; i < introductoryCodingCourses.length; i++) {
+          $(".IntroCourse"+i).append("<div class='displayedContent'><h2>"+introductoryCodingCourses[i].Name +"</h2>&nbsp <p>"+ introductoryCodingCourses[i].Description +"</p></br><h4>Duration</h4>: " + introductoryCodingCourses[i].Duration+"</br><h4>Price</h4>: R" + introductoryCodingCourses[i].Price+ "</p</div> <div class='hiddenContent'><img src='Code4ct_Images/CourseImages/Hiddencart.png' alt='' ><p>Add to cart</p></div>")
+          $(".courseHolder").append("<div class='hiddenContent'><img src='Code4ct_Images/CourseImages/Hiddencart.png' alt='' ><p>Add to cart</p></div>")
+          }
+      });
+
+      $(function Beginnercreation() {
+          for (var i = 0; i < BeginnerCodingCourses.length; i++) {
+          $(".bgCourse"+i).append("<div class='displayedContent'><h2>"+BeginnerCodingCourses[i].Name +"</h2>&nbsp <p>"+ BeginnerCodingCourses[i].Description +"</p></br><h4>Duration</h4>: " + BeginnerCodingCourses[i].Duration+"</br><h4>Price</h4>: R" + BeginnerCodingCourses[i].Price+ "</p</div><div class='hiddenContent'><img src='Code4ct_Images/CourseImages/Hiddencart.png' alt='' ><p>Add to cart</p></div>")
+          $(".courseHolder").append("<div class='hiddenContent'><img src='Code4ct_Images/CourseImages/Hiddencart.png' alt='' ><p>Add to cart</p></div>")
+          }
+      });
+
+      $(function JoinCourse() {
+        for (var x = 0; x < BeginnerDivs.length; x++) {
+        $(".IntroCourse"+x).click(function(){
+          for (var i = 0; i < introductoryCodingCourses.length; i++) {
+          $(".addedToCart").append("<div class='webpageAdded'><div class='courseName'><h5>" + introductoryCodingCourses[i].Name + "</h5></div><div class='coursePrice'><h6>R" + introductoryCodingCourses[i].Price + "</h6>"+"<button class='deleter' style='text-align:center'>X</button></div></div>")
+          }
+          })
+        }
+       });
+
+        $(function webPageJoined(){
+        for (var x = 0; x < introductoryCodingCourses.lengt; x++){
+          $(".IntroCourse").click(function(){
+            $(".addedToCart").append(
+              "<div class='webpageAdded'><div class='courseName'><h5>" + introductoryCodingCourses[x].Name + "</h5></div><div class='coursePrice'><h6>R" + introductoryCodingCourses[x].Price + "</h6>"+"<button class='deleter' style='text-align:center'>X</button></div></div>")
+          })
+        }
+        });
+
+        // $(function musicJoined(){
+        //   $(".IntroCourse1").click(function(){
+        //     $(".addedToCart").append(
+        //       "<div class='musicAdded'><div class='courseName'><h5>" + introductoryCodingCourses[1].Name + "</h5></div><div class='coursePrice'><h6>R" + introductoryCodingCourses[1].Price + "</h6></div></div>"
+        //     )
+        //   })
+        // });
+
+        // $(function animationJoined(){
+        //   $(".IntroCourse2").click(function(){
+        //     $(".addedToCart").append(
+        //       "<div class='animationAdded'><div class='courseName'><h5>" + introductoryCodingCourses[2].Name + "</h5></div><div class='coursePrice'><h6>R" + introductoryCodingCourses[2].Price + "</h6></div></div>"
+        //     )
+        //   })
+        // });
+
+        $(function javaScripJoined(){
+          $(".bgCourse0").click(function(){
+            $(".addedToCart").append(
+              "<div class='javaScriptAdded'><div class='courseName'><h5>" + BeginnerCodingCourses[0].Name + "</h5></div><div class='coursePrice'><h6>R" + BeginnerCodingCourses[0].Price + "</h6>"+"<button class='deleter' style='text-align:center'>X</button></div></div>"
+            )
+          })
+        });
+
+        $(function frontEndJoined(){
+          $(".bgCourse1").click(function(){
+            $(".addedToCart").append(
+              "<div class='frontEndAdded'><div class='courseName'><h5>" + BeginnerCodingCourses[1].Name + "</h5></div><div class='coursePrice'><h6>R" + BeginnerCodingCourses[1].Price + "</h6></div></div>"
+            )
+          })
+        });
+
+        $(function PythonJoined(){
+          $(".bgCourse2").click(function(){
+            $(".addedToCart").append(
+              "<div class='pythonAdded'><div class='courseName'><h5>" + BeginnerCodingCourses[2].Name + "</h5></div><div class='coursePrice'><h6>R" + BeginnerCodingCourses[2].Price + "</h6></div></div>"
+            )
+          })
+        });
+
+        $(function PythonDelete(){
+          $("")
+        })
+
+    </script>
+  </body>
+</html>

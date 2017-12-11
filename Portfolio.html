@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS_Project</title>
+
+<!--external css and javascript scripts linked here-->
+    <script src="Code4ct_Javascript\jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Code4ct_Javascript\Code4ct_JS_Project.js"></script>
+    <link type="text/css" rel="stylesheet" href="Code4ct_Css\Code4ct_Js_ProjectStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica|Arial|Lucida|sans-serif" rel="stylesheet">
+<!--ends-->
+  <style media="screen">
+/*class made into a grid with four areas*/
+    .container{
+      display: grid;
+      grid-template-areas: "header"
+                           "holder"
+                           "page_content"
+                           "footer";
+    }
+/*ends*/
+/*placing content in repective location within the grid*/
+    header{
+      grid-area: header;
+    }
+
+    .title_Holder{
+      grid-area: holder;
+    }
+
+    .Main_content{
+      grid-area: page_content;
+    }
+
+    footer{
+      grid-area: footer;
+    }
+/*ends*/
+/*img of div given a height and floated cursor changes when mouses moves over it*/
+    .Image_gallery1 img{
+      height: 220px;
+      float: left;
+      cursor: pointer;
+    }
+
+    .Image_gallery1 img:active{
+      transform: scale(2);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+/*ends*/
+
+    .selector{
+      width: 18px;
+      height: 22px;
+      text-align: center;
+      margin: auto;
+      margin-top: 5px;
+      position: relative;
+      padding: 0;
+      display: none;
+    }
+
+    .selector:active{
+      background-color: red;
+      color: white;
+    }
+
+    .displayer{
+      position: absolute;
+      top: 120%;
+      left: 50%;
+    }
+
+  </style>
+  </head>
+  <body>
+<!-- container that holds that content within the website with four main sections-->
+    <div class="container">
+      <header>
+<!-- logo placed within a div as well as the navbar to all the other pages of the website placed within its own div within the header         -->
+        <div class="logo">
+          <img src="Code4ct_Images\code4ct-logo-1.jpg" alt="Code4ct_Logo" id="logoImage">
+        </div>
+        <div class="navbar">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </div>
+<!--ends-->
+      </header>
+<!-- caption that holds the title of the page given a heading -->
+      <div class="title_Holder">
+          <h2>OUR PORTFOLIO</h2>
+      </div>
+<!-- ends -->
+
+      <div class="Main_content">
+        <div class="distrubtion_paragraph">
+            <h4>Our Awesome Portfile</h4>
+            <p>We want to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. We want high school girls to have an enabling environment to imagine and create new technology that is relevant to a South African context.</p>
+        </div>
+        <div class="Image_gallery1">
+          <img src="Code4ct_Images\IMG_7407 copy.jpg" alt="coders_ploting" width="25%">
+          <img src="Code4ct_Images\IMG_3295.jpg" alt="presentation" width="20%">
+          <img src="Code4ct_Images\IMG_7440.jpg" alt="overhead_coding" width="30%">
+          <img src="Code4ct_Images\IMG_7446.jpg" alt="classroom_coding" width="25%">
+          <img src="Code4ct_Images\IMG_7472 (1).jpg" alt="researching_code" width="25%">
+          <img src="Code4ct_Images\IMG_7482 (1).jpg" alt="deep_in_thought" width="30%">
+          <img src="Code4ct_Images\IMG_8497 (1).jpg" alt="next_group_of_coders" width="20%" >
+          <img src="Code4ct_Images\untitled-0993.jpg" alt="bootCamp" width="25%">
+          <img src="Code4ct_Images\IMG_20170714_111412.jpg" alt="group_talk" width="25%">
+          <img src="Code4ct_Images\IMG_8415 (1).jpg" alt="classroom" width="20%">
+          <img src="Code4ct_Images\IMG_7408.jpg" alt="daily_task" width="30%">
+          <img src="Code4ct_Images\IMG_2781.jpg" alt="coders_smiles" width="25%">
+        </div>
+        <div class="displayer">
+
+        </div>
+        <center><button class="selector">1</button>
+        <button class="selector">2</button>
+        <button class="selector">3</button></center>
+
+      </div>
+<!-- backtotop placed as an image than when clicked takes user back to the top of the page -->
+      <div class="backToTop">
+        <a href=''><img src="Code4ct_Images\Icon\back_to_top.png" alt="back_Top_Icon" id="back_to_top"></a>
+      </div>
+<!-- ends-->
+
+      <footer>
+<!-- the location in switch one can get hold of code4ct and the other sponsers involved with them -->
+        <div class="code4ct_sponsers">
+          <img src="Code4ct_Images\Logos\45_case_study_logos_11_csg.jpg" alt="csgLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\12036577_1038257182881877_1359906442470780469_n.jpg" alt="openBoxLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\deloitte-logo.jpg" alt="deloitteLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\lwandlelogo1.jpg" alt="lwandleLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\MAZARS_logo.jpg" alt="mazarsLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\Mobenzi_Logo.jpg" alt="mobenziLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\Takealot-logo.jpg" alt="takealotLogo" id="sponsers_Image">
+          <img src="Code4ct_Images\Logos\TNS-logo-2012.jpg" alt="tnsLogo" id="sponsers_Image">
+        </div>
+        <div class="code4ct_Contact_Information">
+          <div class="Code4ct_legality">
+              <h4>Legal</h4>
+              <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+          </div>
+          <div class="code4ct_extra_information">
+              <h5>Company</h5>
+              <ul>
+                <li><a href="Code4ct_JS_Project_About.html">About</a></li>
+                <li><a href="Code4ct_JS_Project_Contact.html">Contact</a></li>
+                <li><a href="http://code4ct.com/blog/" target="_blank">Blog</a></li>
+                <li><a href="http://code4ct.com/impact/" target="_blank">Testimonials</a></li>
+                <li><a href="http://code4ct.com/support-us/" target="_blank">Affilate program</a></li>
+              </ul>
+          </div>
+          <div class="code4ct_feedback">
+              <h5>Help & Support</h5>
+              <ul>
+                <li>Help centre</li>
+                <li>Free simple Template</li>
+                <li>Refund policy</li>
+                <li>Report span</li>
+              </ul>
+          </div>
+          <div class="code4ct_contact_details">
+            <ol>
+              <li><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"> 021 685 0991</li>
+              <li><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"> info@code4ct.com</li>
+              <li><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"> Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</li>
+            </ol>
+          </div>
+
+        </div>
+        <div class="footer_Border">
+          <p>COPYRIGHT &copy 2017 <strong>PRIVACY POLICY</STRONG></p>
+          <p id="social_media" style="float: left;">Follow us:
+            <ul id="social_media_icons">
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png" ></a></li>
+              <li><a href="https://twitter.com/@code4ct" target="_blank"><img src="Code4ct_Images\Icon\Twitter-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Pinterest-icon.png"></a></li>
+              <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></a></li>
+              <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\linkedin_Icon.png"></a></li>
+              <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\skype_icon.png"></a></li>
+            </ul>
+          </p>
+      </div>
+        </div>
+      </footer>
+<!-- ends -->
+    </div>
+<!--ends-->
+  <script type="text/javascript">
+      $('.Image_gallery1').click(function(){
+        let image =$(this).attr("src");
+        const displayedImage = "<div class="displayingImage" click="closeDisplayed()"></div>";
+        displayedImage
+      })
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS_Project</title>
+
+<!--external css and javascript scripts linked here-->
+    <script src="Code4ct_Javascript\jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Code4ct_Javascript\Code4ct_JS_Project.js"></script>
+    <link type="text/css" rel="stylesheet" href="Code4ct_Css\Code4ct_Js_ProjectStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica|Arial|Lucida|sans-serif|Nunito" rel="stylesheet">
+<!--ends-->
+    <style media="screen">
+
+    header{
+      height: 60px;
+    }
+/*div given a margin top/bottom and right/left, the images within the div floated and given a margin-left*/
+    .intro_to_code4ct{
+      margin:50px 150px;
+    }
+
+    .intro_to_code4ct img{
+      float: right;
+      margin-left: 20px;
+    }
+/*ends*/
+/*the link in the button underliner removed and given a color with a font family and font size*/
+    button a{
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      font-family: 'Nunito', sans-serif;
+    }
+/*ends*/
+
+/*the div made into a grid that has 2 cols/rows and a gap, the h4 headings given a color and the img floated, has a margin to the right plus a width and a height*/
+    .code4ct_core{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap:1vw;
+    }
+
+    .code4ct_core h4{
+      color: rgb(216, 84, 84);
+    }
+
+    .code4ct_identityImage img{
+      float: left;
+      margin-right: 30px;
+      width: 550px;
+      height: 500px
+    }
+/*ends*/
+/*the div has a border, and border-radius to shape it into a circle text placed in the center the top of the border has a different color and size to the other sides and width/height also added, the div has an animation that takes 5s that grows slowly, keyframe specifies at what peace should the animation and what must happen in that specfic percentage*/
+    .Rotate{
+      border: 2px solid grey;
+      border-radius: 50%;
+      text-align: center;
+      width: 100px;
+      height: 100px;
+      float: left;
+      margin: 20px;
+      margin-left: 150px;
+      color: white;
+
+    }
+/*ends*/
+    </style>
+  </head>
+  <body>
+<!-- container that holds that content within the website with four main sections-->
+    <div class="container">
+      <header>
+<!-- logo placed within a div as well as the navbar to all the other pages of the website placed within its own div within the header-->
+        <div class="logo">
+          <img src="Code4ct_Images\code4ct-logo-1.jpg" alt="Code4ct_Logo" id="logoImage">
+        </div>
+        <div class="navbar">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </div>
+<!--ends-->
+      </header>
+<!-- caption given a h3 heading-->
+      <div class="title_Holder">
+          <h2>ABOUT US</h2>
+      </div>
+<!-- ends -->
+<!-- div has 2 main divs within it, what code4ct is about and what it arer its code princles, imgs also added and given inline, hr line added and styled in external css page -->
+      <div class="About_Code4ct">
+        <div class="intro_to_code4ct">
+          <img src="Code4ct_Images\IMG_2781.jpg" alt="code4ct_girls" width="440px" height="350px" id="code4ct_learners">
+          <h3>Welcome To Company</h3>
+          <hr>
+          <br>
+          <p>Code for Cape Town (Code4CT) is a programme that introduces young girls to basic web building skills and exposes them to opportunities in the Information and Communication Technologies (ICT) sector. Participants are trained in web development, design principles, as well as courses in professional development. Code4CT aims to inspire a generation of young girls who are well-prepared with a toolkit of technical and soft skills in order to achieve high impact in the workplace. These are skills that everyone should have. Even if you have no intention of becoming a professional coder, you will benefit from knowing how to think in this way in this increasingly computerized economy. A growing number of permanent job positions that use information technology to deliver a product or a service are becoming available in the local economy.</p>
+            <button class="buttons"><a href="Code4ct_Courses.html">Our Courses</a></button>
+        </div>
+        <div class="code4ct_identity">
+          <div class="code4ct_identityImage">
+            <img src="Code4ct_Images\untitled-0932.jpg" alt="code4ct">
+          </div>
+          <h3>Who Are We</h3>
+          <hr>
+          <br>
+          <p>Code for Cape Town strives to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. </p>
+          <div class="code4ct_core">
+            <div class="code4ct_coreValues">
+              <h4>Our Vision</h4>
+              <p>Code4CT exists to see young South African women in positions to drive African innovation. We believe in the strength of the collective: one person’s success is everyone’s joy; one person’s failure requires everyone’s support.</p>
+            </div>
+            <div class="code4ct_coreValues">
+              <h4>Our Mission</h4>
+              <p>Our first responsibility is to ensure every learner in our program feels challenged and supported in her learning; that each learner realises her potential to manifest change. </p>
+            </div>
+            <div class="code4ct_coreValues">
+              <h4>Our Help</h4>
+              <p>We are committed to an equitable society and creating a racially and culturally diverse learning environment.  We will work to dismantle euro-centric education and structural inequities within our society.</p>
+            </div>
+            <div class="code4ct_coreValues">
+              <h4>Our Support</h4>
+              <p> Through self reflection and small group mentoring, learners are guided in developing critical life and career skills. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--ends-->
+<!-- team of code4ct image, their role along with a short distrubtion about them is provided  with inline styling for the paragragh-->
+      <div class="code4ct_team" style="margin: 0px 95px">
+        <h2>Meet Our Team</h2>
+        <hr>
+        <br>
+        <p style="margin: 5px 250px 10px 0"> We wants to put this power into the hands and hearts of every girl, because soon not knowing the language of computers will be as challenging as being illiterate & innumerate are today.</p>
+        <div class="code4ct_Team_Images">
+          <div class="team_member">
+            <img src="Code4ct_Images\Team\Emma.jpg" alt="" id="aboutCode4ct_Team">
+            <h4>Emma Dicks</h4>
+            <p><em>Founder and Director</em><br>Emma is passionate about providing high quality education that enables young people to bring innovative ideas to life and play an active role in South Africa’s economy.</p>
+          </div>
+
+          <div class="team_member">
+            <img src="Code4ct_Images\Team\Andrea.jpg" alt="" id="aboutCode4ct_Team">
+            <h4>Andrea Petersen</h4>
+            <p><em>Operations Lead</em><br>Andrea thrives on seeing key players in the Code4CT ecosystem discover how they can make the greatest impact. When she is not co-ordinating the Code4CT family she can be found enjoying the diverse cuisine and great outdoors that Cape Town has to offer.</p>
+          </div>
+
+          <div class="team_member">
+            <img src="Code4ct_Images\Team\Tegan.jpg" alt="" id="aboutCode4ct_Team">
+            <h4>Tegan Crous</h4>
+            <p><em>Program Lead</em><br>Tegan heads up the high school program. She is spurred on by a heart for people and seeing them pursue their potential in a safe, fun and nurturing environment. </p>
+          </div>
+
+          <div class="team_member">
+            <img src="Code4ct_Images\Team\Tracy.jpg" alt="" id="aboutCode4ct_Team">
+            <h4>Tracy-Anne Sikenjana</h4>
+            <p><em>Leadership Program Manager</em><br>Tracy joined the Code4CT program in 2015 and then matriculated from Rustenburg Girls’ High in 2016. She decided to intern with Code4CT to give back to an organisation that had a large impact on her personal growth and development. </p>
+          </div>
+        </div>
+      </div>
+<!-- ends -->
+<!-- the location in switch one can get hold of code4ct and the other sponsers involved with them as well as their social media pages also linked-->
+      <footer>
+        <div class="code4ct_sponsers">
+          <div class="Rotate">
+            <label id="yes">85%</label>
+            <p>Web Design</p>
+          </div>
+          <div class="Rotate">
+            <label id="">90%</label>
+            <p>Branding</p>
+          </div>
+          <div class="Rotate">
+            <label id="">80%</label>
+            <p>Photography</p>
+          </div>
+          <div class="Rotate">
+            <label id="">97%</label>
+            <p>Print Design</p>
+          </div>
+        </div>
+<!-- backtotop placed as an image than when clicked takes user back to the top of the page -->
+        <div class="backToTop">
+          <a href=''><img src="Code4ct_Images\Icon\back_to_top.png" alt="back_Top_Icon" id="back_to_top"></a>
+        </div>
+<!-- ends-->
+        <div class="code4ct_joining">
+          <div class="code4ct_subscribution" style="text-align:center">
+            <h4><img src="Code4ct_Images\Icon\002-paper-plane-1.png" alt="paperplane" width="20px" height="20px"> SUBSCRIBE TO US:</h4>
+            <p style="margin:5px 55px">Individuals and companies may choose to align themselves to our work by becoming a #FriendofCode4CT.</p>
+            <input type="email" name="E-mail" placeholder="enter your email">
+            <button>Submit</button>
+          </div>
+          <div class="code4ct_sponsers">
+            <img src="Code4ct_Images\Logos\45_case_study_logos_11_csg.jpg" alt="csgLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\12036577_1038257182881877_1359906442470780469_n.jpg" alt="openBoxLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\deloitte-logo.jpg" alt="deloitteLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\lwandlelogo1.jpg" alt="lwandleLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\MAZARS_logo.jpg" alt="mazarsLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\Mobenzi_Logo.jpg" alt="mobenziLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\Takealot-logo.jpg" alt="takealotLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\TNS-logo-2012.jpg" alt="tnsLogo" id="sponsers_Image">
+
+          </div>
+        </div>
+        <div class="code4ct_Contact_Information">
+          <div class="Code4ct_legality">
+              <h4>Legal</h4>
+              <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+          </div>
+          <div class="code4ct_extra_information">
+              <h5>Company</h5>
+              <ul>
+                <li><a href="Code4ct_JS_Project_About.html">About</a></li>
+                <li><a href="Code4ct_JS_Project_Contact.html">Contact</a></li>
+                <li><a href="http://code4ct.com/blog/" target="_blank">Blog</a></li>
+                <li><a href="http://code4ct.com/impact/" target="_blank">Testimonials</a></li>
+                <li><a href="http://code4ct.com/support-us/" target="_blank">Affilate program</a></li>
+              </ul>
+          </div>
+          <div class="code4ct_feedback">
+              <h5>Help & Support</h5>
+              <ul>
+                <li>Help centre</li>
+                <li>Free simple Template</li>
+                <li>Refund policy</li>
+                <li>Report span</li>
+              </ul>
+          </div>
+          <div class="code4ct_contact_details">
+            <ol>
+              <li><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"> 021 685 0991</li>
+              <li><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"> info@code4ct.com</li>
+              <li><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"> Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</li>
+            </ol>
+          </div>
+
+        </div>
+        <div class="footer_Border">
+          <p>COPYRIGHT &copy 2017 <strong>PRIVACY POLICY</STRONG></p>
+            <p id="social_media" style="float: left;">Follow us:
+              <ul id="social_media_icons">
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png" ></a></li>
+                <li><a href="https://twitter.com/@code4ct" target="_blank"><img src="Code4ct_Images\Icon\Twitter-icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Pinterest-icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\linkedin_Icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\skype_icon.png"></a></li>
+              </ul>
+            </p>
+        </div>
+      </footer>
+<!-- ends -->
+    </div>
+    <script>
+//     $('#yes').circleProgress({
+//         value : 0.92,
+//         fill: {
+//           color: '#008000'
+// }
+// });
+    </script>
+<!--ends-->
+  </body>
+</html>

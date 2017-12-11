@@ -1,0 +1,210 @@
+/*automated margin and padding on the body removed with a given width and font-family*/
+body{
+  margin: 0 50px;
+  padding: 0px;
+  width: 90%;
+  font-family: 'Lato', sans-serif;
+}
+/*ends*/
+/*the consist container of all the pages of the website given an approriate height*/
+.container{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/*ends*/
+/*the header of website is fixed to the top, given a height and width, margin top/bottom and right/left, background-color included*/
+header{
+  position: fixed;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0px;
+  background-color: white;
+  z-index: 10;
+  top: 0;
+
+}
+/*ends*/
+/*the div with the logo floated to the left*/
+.logo{
+  float: left;
+}
+/*ends*/
+
+/*logo given a width and height*/
+#logoImage{
+  width: 250px;
+  height: 100px;
+}
+/*ends*/
+/*navbar floated, given different margin all around, the bullets removed, underliner on words also removed and floated with a margin on all sides, given a downloaded font family and line height given a color when user hovers over it and a color when  active plus font size changes*/
+.navbar{
+  float: left;
+  margin: 15px 30px 15px 300px;
+  list-style: none;
+}
+
+.navbar li{
+  float: left;
+  margin: 15px;
+  line-height: 2px;
+}
+
+.navbar li a{
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar li a:hover{
+  color: red;
+  }
+
+.navbar li a:active{
+  color: rgb(171, 174, 178);
+  font-size: 22px;
+}
+/*ends*/
+/*div placed in its specfic loction within the grid with a width and height given, background color added*/
+  .title_Holder{
+    grid-area: Article;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(171, 174, 178);
+      }
+/*ends*/
+/*heading given has a downloaded font family with a font size and a margin on the left*/
+  .title_Holder h2{
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    margin-left: 400px;
+    top: 50%;
+}
+/*ends*/
+/*button given a width and a height as well as a background color, border-radius to smooth out edges*/
+  .buttons{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(188, 54, 54);
+    border-radius: 10%;
+}
+
+  .buttons:hover{
+    width : 225px;
+    transition: 1s ease;
+    cursor: pointer;
+  }
+/*ends*/
+/*div placed into its area, div has its own grid with 4 cols*/
+  .code4ct_Contact_Information{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px 90px;
+    }
+/*ends*/
+/*the div with the team of code4ct placed in a grid with 2cols and 2rows and given a gap*/
+  .code4ct_Team_Images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2vw;
+    }
+/*ends*/
+/*the id with the div gievn a width and a height, margin on the right and the left, then floated*/
+  .code4ct_Team_Images #aboutCode4ct_Team{
+    width:350px;
+    height: 350px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    float: left;
+    }
+/*ends*/
+/*class given a background color as well as a height*/
+  .footer_Border{
+    background-color: rgb(214, 66, 81);
+    height: 40px;
+  }
+/*ends*/
+/*the paragraph tags within the class floated*/
+  .footer_Border p{
+    float: left;
+  }
+/*ends*/
+/*the id has a margin to the left and the list floated to the left and margin to the right with the bullets removed, the imgs all have the same width and height with a margin on top and bottom*/
+  #social_media{
+    margin-left: 500px;
+  }
+
+  #social_media_icons li{
+    float: left;
+    margin-right: 15px;
+    list-style: none;
+  }
+
+  li img{
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+/*ends*/
+/*underliners removed and given a font size*/
+    ul li, ul li a{
+      text-decoration: none;
+      font-size: 20px;
+    }
+/*ends*/
+/*bullets removed*/
+    ol li{
+      list-style: none;
+    }
+/*ends*/
+/*class given width and height, margin to the top and the bottom, with a background color*/
+    .code4ct_sponsers{
+      width: 100%;
+      height: 150px;
+      background-color: black;
+      margin: 10px 0px;
+}
+/*ends*/
+/*id gievn a width, height and a margin with padding to the top*/
+    #sponsers_Image{
+      width: 100px;
+      height: 70px;
+      margin: 15px;
+      padding-left: 15px;
+      padding-top: 20px;
+    }
+/*ends*/
+/*the horizontal line has a border, width and floated to the left, automated margin and padding removed*/
+    hr{
+    border: 1px solid red;
+    width: 50px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    }
+/*ends*/
+/*the image that sends users to the top of the page, has a position in the bottom left, with a index and*/
+.backToTop{
+    position: fixed;
+    bottom: 25%;
+    left: 25px;
+    z-index: 99;
+    /*border: none;
+    outline: none;*/
+}
+
+#back_to_top{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+}
+
+.code4ct_subscribution{
+    height: 150px;
+    margin-top: 50px;
+}

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS_Project</title>
+
+<!--external css and javascript scripts linked here-->
+    <script src="Code4ct_Javascript\jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Code4ct_Javascript/Code4ct_JS_Project.js"></script>
+    <link type="text/css" rel="stylesheet" href="Code4ct_Css/Code4ct_Js_ProjectStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica|Arial|Lucida|sans-serif" rel="stylesheet">
+<!--ends-->
+  <style>
+/*main website container given a grid with four areas*/
+    .container{
+      display: grid;
+      grid-template-areas: "header"
+                           "homeSlider"
+                           "homeContent"
+                           "footer";
+      width: 100%;
+    }
+/*ends*/
+
+/*header and footer placed in there approriate place in the main grid*/
+    header{
+      grid-area: header;
+    }
+
+    footer{
+      grid-area: footer;
+    }
+/*ends*/
+
+/*the home slider placed within the div and given a background color, width and height, top.. and the img takes 100% of the width and height, position also given*/
+    .code4ct_homeslider{
+      grid-area: homeSlider;
+      background-color: grey;
+      height: 600px;
+      width: 100%;
+      border: 1px solid grey;
+      position: relative;
+    }
+
+    .code4ct_homeslider img{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+/*ends*/
+
+    .homeSliderDots{
+      margin: 500px;
+      position: absolute;
+      padding: 50px;
+    }
+
+/*text in the home slider placed in the center, with a background color, margin top/bottom and right/left, with a style to make it blary*/
+    .homeSlider_Text{
+      text-align: center;
+      margin: 75px 380px;
+      width: 550px;
+      height: 350px;
+      background-color: rgba(0,0,0,.3);
+      opacity: 40%;
+      position: absolute;
+      color: white;
+    }
+/*ends*/
+/*class given width, height and position, as will as the class within it border-radius included*/
+   .sliderContainer{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+}
+
+    .sliderContainer .btn{
+      position: absolute;
+      width: 80px;
+      top: 320px;
+      border-radius: 40%;
+}
+/*ends*/
+/*id placed in approriate position and floated*/
+    #btn1{
+      position: relative;
+      float: left;
+}
+
+    #btn2{
+      position: relative;
+      float: right;
+}
+/*ends*/
+/*class give  width, height, margin right/left cursor changes when mouse over class and background color included, background color changes as well as the height when hovering on class*/
+    .dot {
+      height: 10px;
+      width: 18px;
+      margin: 0 2px;
+      background-color: white;
+      cursor:pointer;
+      display: inline-block;
+}
+
+    .active, .dot:hover {
+      background-color: rgb(219, 127, 127);
+      height: 15px;
+}
+/*ends*/
+/*main heading of page given a margin only on top and a color*/
+    h1{
+      margin-top: 100px;
+      color: white;
+    }
+/*ends*/
+
+/*div placed in the grid given a background color and a margin(automated top and bottom removed only applied left and right)*/
+    .homeContent{
+      grid-area: homeContent;
+      width: 100%;
+    }
+/*ends*/
+
+/*info of the div floated to the left and margin top/bottom removed and width included...extra content displayed hidden*/
+    .homeContent .info_about_Code4ct{
+      margin: 0px 50px;
+      float: left;
+      width:350px;
+      }
+
+    .aboutCode4ct_HiddenText{
+      display: none;
+    }
+/*ends*/
+
+/*the div with the images made into a grid with 2 cols/rows and given a gap, the grid has a margin top/bottom and right/left*/
+    .homeContent .about_Code4ct_images{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 5px;
+      margin: 10px 20px;
+      width: 50%;
+    }
+/*ends*/
+
+/*the id of the images gievn the same width and height*/
+    #abouCode4ct_Team, .aboutCode4ct_About_Image{
+      width: 300px;
+      height: 220px;
+    }
+/*ends*/
+/*class list styling removed and list floated with a margin all around, width/height to imgs given and not displayed due to no links provided*/
+    .teamSocialIcons{
+      list-style-type: none;
+    }
+
+    .teamSocialIcons li{
+      float: left;
+      margin: 4px;
+    }
+
+    .teamSocialIcons li img{
+      width: 20px;
+      height: 20px;
+      display: none;
+    }
+/*ends*/
+/*automated margin and padding removed and given a width with a background color*/
+    .services{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: black;
+    }
+/*ends*/
+
+/*table given a margin and the content within placed in the center and given a color*/
+    table{
+      margin: 50px;
+    }
+
+     table, td, th {
+      color: white;
+      text-align: center;
+}
+/*ends*/
+
+/*id given a width and a height*/
+    #Services_Icons{
+      width: 50px;
+      height: 100px;
+    }
+/*ends*/
+
+/*given a gird with 3 cols and 2 rows with a gap and margin at the top, the images within the div given height and width*/
+    .portfolio_images{
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 4px;
+      margin-top: 10px;
+    }
+
+    .portfolio_images img{
+      width: 300px;
+      height: 200px;
+    }
+/*ends*/
+
+/*the id of the image placed within the grid and fitted in row one down to the second in column 3 with a width and height*/
+    #portfolio_mainImage{
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      width:450px;
+      height: 100%;
+    }
+/*ends*/
+
+/*div given a background color, the div takes up 100% of the width, the table within it placed into aligned center and a font-size given, content given a color the first row of the table has a id with a font-size and padding*/
+    .code4ct_repSheet{
+      background-color: black;
+      width: 100%;
+      height: 150px;
+    }
+
+    #counter tr #counter_numbers{
+      padding: 25px;
+      font-size: 25px;
+    }
+
+    #counter .state_counter{
+      border-top: 1px solid red;
+    }
+
+    #counter tr td{
+      padding: 15px;
+      color: white;
+      margin: 50px;
+      text-align: center;
+      font-size: 15px;
+      width: 200px;
+    }
+/*ends*/
+
+/*the @media for a cellphone places all content directly below one another giving them 100% of the with of the screen*/
+      @media only screen and (min-device-width: 767px) and (max-device-width: 1000px){
+        header{
+          width: 100%;
+          position: relative;
+        }
+
+        #logoImage{
+          width: 100%;
+          height: 200px;
+          align:center;
+          position: fixed;
+          margin: 0;
+          padding: 0;
+        }
+
+        .navbar{
+          margin-top: 200px;
+        }
+
+        .navbar li{
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .navbar li a{
+          font-size: 50px;
+          text-align: center;
+        }
+
+        .code4ct_homeslider{
+          margin: 0s;
+        }
+
+        .homeContent .about_Code4ct_images{
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 1fr);
+        }
+  }
+
+/*the @media for a tablet display hides the image and gives the nav bar hundred percent of the width and the three div sit approriatly in their places and centered*/
+      @media only screen and (min-device-width: 0px) and (max-device-width: 766px)   {
+        .image{
+          display: none;
+        }
+
+        .nav{
+          width: 100%;
+          align-content: center;
+        }
+
+        .box1{
+          width: 30%;
+          float: left;
+        }
+
+        .box2{
+          width: 30%;
+          float: left;
+        }
+
+        .box3{
+          width: 30%;
+          float: left;
+        }
+      }
+/*ends*/
+
+  </style>
+  </head>
+  <body>
+<!-- container that holds that content within the website with four main sections-->
+    <div class="container">
+      <header>
+<!-- logo placed within a div as well as the navbar to all the other pages of the website placed within its own div within the header-->
+        <div class="logo">
+          <img src="Code4ct_Images\code4ct-logo-1.jpg" alt="Code4ct_Logo" id="logoImage">
+        </div>
+        <div class="navbar">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </div>
+<!--ends-->
+      </header>
+<!-- the slider on the main page-->
+      <div class="code4ct_homeslider">
+          <div class="sliderContainer">
+            <img class="slider" src="Code4ct_Images\IMG_2781.jpg" alt="" id="sliderImages1">
+            <img class="slider" src="Code4ct_Images\IMG_3295.jpg" alt="" id="sliderImages2">
+            <img class="slider" src="Code4ct_Images\IMG_7401.jpg" alt="" id="sliderImages3">
+
+            <button class="btn" id="btn1" click="navigator(-1)">previous</button>
+            <button class="btn" id="btn2" click="navigator(1)">next</button>
+          </div>
+          <div class="homeSlider_Text">
+            <h1>Code for Cape Town</h1>
+            <p>We want to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. We want high school girls to have an enabling environment to imagine and create new technology that is relevant to a South African context.</p>
+            <button class="buttons">READ MORE</button> <button class="buttons">DONATE NOW</button>
+          </div>
+
+        <div class="homeSliderDots">
+          <div class="dots" style="text-align: center">
+            <button class="dot" onclick="currentSlide(1)"></button>
+            <button class="dot" onclick="currentSlide(2)"></button>
+            <button class="dot" onclick="currentSlide(3)"></button>
+          </div>
+        </div>
+      </div>
+<!-- ends -->
+
+<!-- the content in the home, placed separatly in 6 div to differcaite the sections within this div-->
+      <div class="homeContent">
+<!-- the information (summary) of what code4ct is basicly all about and images of the people(team) involved with code4ct-->
+        <div class="aboutCode4ct">
+          <div class="info_about_Code4ct" style="margin: 0px 95px">
+            <h2>Who Are We</h2>
+            <hr>
+            <br>
+            <h4></h4>
+            <p>Code for Cape Town (Code4CT) is a programme that introduces young girls to basic web building skills and exposes them to opportunities in the Information and Communication Technologies (ICT) sector. Participants are trained in web development, design principles, as well as courses in professional development. Code4CT aims to inspire a generation of young girls who are well-prepared with a toolkit of technical and soft skills in order to achieve high impact in the workplace.</p>
+            <div class="aboutCode4ct_HiddenText">
+              These are skills that everyone should have. Even if you have no intention of becoming a professional coder, you will benefit from knowing how to think in this way in this increasingly computerized economy.
+            </div>
+            <button class="buttons" name="button" id="ButtonMore"><a href="Code4ct_About.html">Read More</a></button>
+          </div>
+
+          <div class="about_Code4ct_images">
+            <img src="Code4ct_Images\IMG_3295.jpg" alt="" class="aboutCode4ct_About_Image">
+            <img src="Code4ct_Images\IMG_7408.jpg" alt="" class="aboutCode4ct_About_Image">
+            <img src="Code4ct_Images\IMG_20170714_111412.jpg" alt="" class="aboutCode4ct_About_Image">
+            <img src="Code4ct_Images\IMG_7446.jpg" alt="" class="aboutCode4ct_About_Image">
+          </div>
+        </div>
+<!--ends-->
+<!-- services offered by code4ct placed within a table icons, heading and paragraph placed in repective place -->
+        <div class="services">
+          <table>
+            <tr>
+              <td><img src="Code4ct_Images\Icon\web_Design1.png" alt="coding_Icon" id="Services_Icons"></td>
+              <td><img src="Code4ct_Images\Icon\Print.png" alt="Communication_Icon" id="Services_Icons"></td>
+              <td><img src="Code4ct_Images\Icon\Photograph.png" alt="problem_solving_Icon" id="Services_Icons"></td>
+            </tr>
+            <tr>
+              <td>CODING</td>
+              <td>COMMUNICATION</td>
+              <td>PROMBLEM SOLVING</td>
+            </tr>
+            <tr>
+              <td>Learn how to build your own websites using HTML, CSS, JavaScript & JQuery. Go on to explore exciting modules from game development to user experience design.</td>
+              <td>Learn how to pitch ideas, represent yourself online, communicate professionally and work with online collaboration tools.</td>
+              <td>Apply your coding skills to issues you are interested in. You will learn how to tackle complex problems using the design thinking process.</td>
+            </tr>
+          </table>
+        </div>
+<!-- ends-->
+<!-- the div has a heading explaining what will follow, the paragraph has a short discrbution of the section and a div that hold the all the images that are styled in the internal css style sheet -->
+        <div class="code4ct_Portfolio" style="margin: 0px 95px">
+          <h2>Our Awesome Profile</h2>
+          <hr>
+          <br>
+          <p style="margin:0px 300px 0 0">Over the past 3 years, Code for Cape Town has reached over 600 young women with coding and social innovation. Not only have they been exposed to coding but they have also done careers and life skills courses, design thinking workshops and social innovation projects to address local challenges. Our alumnae that joined the program in 2014 and 2015 have now left high school and many of them have gone on to enter STEM related tertiary studies or skills development.</p>
+          <div class="portfolio_images">
+            <img src="Code4ct_Images\untitled-0993.jpg" alt="Coders">
+            <img src="Code4ct_Images\IMG_7407 copy.jpg" alt="offering_a_helping_hand">
+            <img src="Code4ct_Images\IMG_2781.jpg" alt="Smiles_of_coding" id="portfolio_mainImage">
+            <img src="Code4ct_Images\IMG_7452.jpg" alt="Team_work">
+            <img src="Code4ct_Images\IMG_7424.jpg" alt="Happy_coder">
+          </div>
+        </div>
+<!--ends-->
+<!-- team of code4ct image, their role along with a short distrubtion about them is provided  with inline styling for the paragragh-->
+        <div class="code4ct_team" style="margin: 0px 95px">
+          <h2>Meet Our Team</h2>
+          <hr>
+          <br>
+          <p style="margin: 5px 250px 10px 0"> We wants to put this power into the hands and hearts of every girl, because soon not knowing the language of computers will be as challenging as being illiterate & innumerate are today.</p>
+          <div class="code4ct_Team_Images">
+            <div class="team_member">
+              <img src="Code4ct_Images\Team\Emma.jpg" alt="" id="aboutCode4ct_Team">
+              <h4>Emma Dicks</h4>
+              <p><em>Founder and Director</em><br>Emma is passionate about providing high quality education that enables young people to bring innovative ideas to life and play an active role in South Africa’s economy.</p>
+              <ul class="teamSocialIcons">
+                <li><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Twitter-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Pinterest-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\linkedin_Icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\skype_icon.png"></li>
+              </ul>
+            </div>
+
+            <div class="team_member">
+              <img src="Code4ct_Images\Team\Andrea.jpg" alt="" id="aboutCode4ct_Team">
+              <h4>Andrea Petersen</h4>
+              <p><em>Operations Lead</em><br>Andrea thrives on seeing key players in the Code4CT ecosystem discover how they can make the greatest impact. When she is not co-ordinating the Code4CT family she can be found enjoying the diverse cuisine and great outdoors that Cape Town has to offer.</p>
+              <ul class="teamSocialIcons">
+                <li><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Twitter-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Pinterest-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\linkedin_Icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\skype_icon.png"></li>
+              </ul>
+            </div>
+
+            <div class="team_member">
+              <img src="Code4ct_Images\Team\Tegan.jpg" alt="" id="aboutCode4ct_Team">
+              <h4>Tegan Crous</h4>
+              <p><em>Program Lead</em><br>Tegan heads up the high school program. She is spurred on by a heart for people and seeing them pursue their potential in a safe, fun and nurturing environment. </p>
+              <ul class="teamSocialIcons">
+                <li><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Twitter-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Pinterest-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\linkedin_Icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\skype_icon.png"></li>
+              </ul>
+            </div>
+
+            <div class="team_member">
+              <img src="Code4ct_Images\Team\Tracy.jpg" alt="" id="aboutCode4ct_Team">
+              <h4>Tracy-Anne Sikenjana</h4>
+              <p><em>Leadership Program Manager</em><br>Tracy joined the Code4CT program in 2015 and then matriculated from Rustenburg Girls’ High in 2016. She decided to intern with Code4CT to give back to an organisation that had a large impact on her personal growth and development.</p>
+              <ul class="teamSocialIcons">
+                <li><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Twitter-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\Pinterest-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\linkedin_Icon.png"></li>
+                <li><img src="Code4ct_Images\Icon\skype_icon.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+<!-- ends -->
+<!-- stats that code4ct current holds placed in divs and functionality applied using jquery on internal js script -->
+        <div class="code4ct_repSheet">
+          <table id="counter">
+            <tr>
+              <td class="state_counter" max_number="1050" id="counter_numbers">0</td>
+              <td class="state_counter" max_number="1850" id="counter_numbers">0</td>
+              <td class="state_counter" max_number="2000" id="counter_numbers">0</td>
+              <td class="state_counter" max_number="3300" id="counter_numbers">0</td>
+            </tr>
+            <tr>
+              <td>Number of girls</td>
+              <td>Finished projects</td>
+              <td>Cup of coffee</td>
+              <td>Lines of code</td>
+            </tr>
+          </table>
+        </div>
+<!--ends-->
+      </div>
+<!-- ends-->
+<!-- backtotop placed as an image than when clicked takes user back to the top of the page -->
+      <div class="backToTop">
+        <a href=''><img src="Code4ct_Images\Icon\back_to_top.png" alt="back_Top_Icon" id="back_to_top"></a>
+      </div>
+<!-- ends-->
+<!-- the location in switch one can get hold of code4ct and the other sponsers involved with them -->
+      <footer>
+        <div class="code4ct_joining">
+          <div class="code4ct_subscribution" style="text-align:center">
+            <h4><img src="Code4ct_Images\Icon\002-paper-plane-1.png" alt="paperplane" width="20px" height="20px"> SUBSCRIBE TO US:</h4>
+            <p style="margin:5px 55px">Individuals and companies may choose to align themselves to our work by becoming a #FriendofCode4CT.</p>
+            <form name='subscribe'>
+              <input type="email" name="E-mail" placeholder="enter your email">
+              <button>Submit</button>
+            </form>
+          </div>
+          <div class="code4ct_sponsers">
+            <img src="Code4ct_Images\Logos\45_case_study_logos_11_csg.jpg" alt="csgLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\12036577_1038257182881877_1359906442470780469_n.jpg" alt="openBoxLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\deloitte-logo.jpg" alt="deloitteLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\lwandlelogo1.jpg" alt="lwandleLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\MAZARS_logo.jpg" alt="mazarsLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\Mobenzi_Logo.jpg" alt="mobenziLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\Takealot-logo.jpg" alt="takealotLogo" id="sponsers_Image">
+            <img src="Code4ct_Images\Logos\TNS-logo-2012.jpg" alt="tnsLogo" id="sponsers_Image">
+
+          </div>
+        </div>
+          <div class="code4ct_Contact_Information">
+            <div class="Code4ct_legality">
+                <h4>Legal</h4>
+                <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+            </div>
+            <div class="code4ct_extra_information">
+                <h5>Company</h5>
+                <ul>
+                  <li><a href="Code4ct_JS_Project_About.html">About</a></li>
+                  <li><a href="Code4ct_JS_Project_Contact.html">Contact</a></li>
+                  <li><a href="http://code4ct.com/blog/" target="_blank">Blog</a></li>
+                  <li><a href="http://code4ct.com/impact/" target="_blank">Testimonials</a></li>
+                  <li><a href="http://code4ct.com/support-us/" target="_blank">Affilate program</a></li>
+                </ul>
+            </div>
+            <div class="code4ct_feedback">
+                <h5>Help & Support</h5>
+                <ul>
+                  <li>Help centre</li>
+                  <li>Free simple Template</li>
+                  <li>Refund policy</li>
+                  <li>Report span</li>
+                </ul>
+            </div>
+            <div class="code4ct_contact_details">
+              <ol>
+                <li><img src="Code4ct_Images\Icon\phone.png" alt="phone_icon" id="enquire_icons"> 021 685 0991</li>
+                <li><img src="Code4ct_Images\Icon\email.png" alt="phone_icon" id="enquire_icons"> info@code4ct.com</li>
+                <li><img src="Code4ct_Images\Icon\addressPin.png" alt="phone_icon" id="enquire_icons"> Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</li>
+              </ol>
+            </div>
+
+          </div>
+          <div class="footer_Border">
+            <p>COPYRIGHT &copy 2017 <strong>PRIVACY POLICY</STRONG></p>
+            <p id="social_media" style="float: left;">Follow us:
+              <ul id="social_media_icons">
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Logos-Facebook-icon.png" ></a></li>
+                <li><a href="https://twitter.com/@code4ct" target="_blank"><img src="Code4ct_Images\Icon\Twitter-icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\Pinterest-icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\GooglePlus-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/company/9414552/" target="_blank"><img src="Code4ct_Images\Icon\linkedin_Icon.png"></a></li>
+                <li><a href="https://www.facebook.com/code4ct/" target="_blank"><img src="Code4ct_Images\Icon\skype_icon.png"></a></li>
+              </ul>
+            </p>
+        </div>
+      </footer>
+<!-- ends -->
+    </div>
+<!--ends-->
+    <script type="text/javascript">
+    let current= 1;
+    displaySlider(current);
+
+    function navigator(n){
+      current = current += n;
+      displaySlider(current);
+    };
+
+    function  currentSlide(n) {
+    displaySlider(slideCurrent += n);
+    };
+
+    function displaySlider(n){
+      const images = document.getElementsByClassName('slider');
+      // const dots = document.getElementsByClassName('dot');
+      let i;
+      if (n > images.length) {
+        current=1
+      };
+      if (n < images.length ) {
+        current = images.length
+      };
+      for (i = 0; i < images.length; i++) {
+        images[i].style.display="none";
+      }
+      images[current - 1].style.display="block";
+    };
+// ends
+
+// function applied to the count up table the function gathers the number to count up using a attribute, the function swings to the max number
+    $('.state_counter').each(function() {
+      const $this = $(this),
+      countTo = $this.attr('max_number');
+
+      $({ countNum: $this.text()}).animate({
+        countNum: countTo
+      },
+      {
+        duration: 1500,
+        easing:'swing',
+        step: function() {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete : function() {
+          $this.text(this.countNum);
+        }
+      });
+    });
+// ends
+// validate of the subcribution form thus user has to type it in before pressing the submit button if e-mail in correct message will apear promting them to submit valid one
+// $(function() {
+//   $("form[name='subscribe']").validate({
+//     rules:{
+//      email: {
+//        required: true,
+//        email: true
+//   },
+// },
+//     messages: {
+//       email: "Please enter a valid email address",
+// },
+// submitHandler: function(form) {
+//   form.button();
+// }
+// });
+// });
+// ends
+// text will be shown on hover over the extra button
+$(document).ready(function(){
+  $("#ButtonMore").hover(function(){
+      $(".aboutCode4ct_HiddenText").slideDown("slow");
+  });
+});
+// ends
+    </script>
+  </body>
+</html>
